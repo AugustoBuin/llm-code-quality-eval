@@ -1,0 +1,47 @@
+# =====================================================================
+#  .gitignore — o que NUNCA deve ir para o repositório.
+#  (Comentado para quem está começando: cada bloco diz o porquê.)
+# =====================================================================
+
+# --- SEGREDOS: chaves de API. JAMAIS commitar. -----------------------
+# A chave do Gemini fica num arquivo de 1 linha, lido pelos scripts de coleta.
+.gemini_key
+*.key
+.env
+.env.*
+
+# --- CONFIG LOCAL: nomes/caminhos reais dos projetos -----------------
+# Mantém os nomes reais das equipes fora do repositório (anonimização P1–P5).
+*.local.config
+projetos.local.config
+
+# --- SAÍDAS DA COLETA: JSONs brutos, logs, backups -------------------
+# Podem conter nomes reais de pasta/arquivo e são pesados. Não versionar.
+resultados/
+*.log
+*.NEUTRALIZED_BAK
+
+# --- PROJETOS-BASE: submódulos adiados (ver projetos-base/README.md) --
+# Ignora qualquer projeto clonado aqui, mas mantém o README explicativo.
+/projetos-base/*
+!/projetos-base/README.md
+!/projetos-base/README.en.md
+!/projetos-base/.gitkeep
+
+# --- Dependências e artefatos de build -------------------------------
+node_modules/
+dist/
+build/
+
+# --- Python ----------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# --- Sistema operacional / editor ------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

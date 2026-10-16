@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "nota_final": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "problemas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "categoria": { "type": "string" },
+          "severidade": { "type": "string", "enum": ["baixa", "media", "alta"] },
+          "descricao": { "type": "string" }
+        },
+        "required": ["severidade", "descricao"],
+        "additionalProperties": false
+      }
+    },
+    "n_problemas": { "type": "integer", "minimum": 0 }
+  },
+  "required": ["nota_final", "problemas", "n_problemas"],
+  "additionalProperties": false
+}

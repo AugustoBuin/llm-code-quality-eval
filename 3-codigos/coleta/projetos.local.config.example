@@ -1,0 +1,41 @@
+# =====================================================================
+#  projetos.local.config.example — Configuração LOCAL da coleta.
+#
+#  COMO USAR:
+#    1. Copie este arquivo para "projetos.local.config" (mesma pasta).
+#    2. Edite ABP e PROJECTS com os caminhos/nomes REAIS na sua máquina.
+#    3. NÃO versione projetos.local.config — ele está no .gitignore de
+#       propósito, para que os nomes reais das equipes nunca vão para o
+#       repositório público.
+#
+#  POR QUE ISSO EXISTE:
+#    O estudo CRITICA a qualidade desses projetos. Publicar os nomes reais
+#    atrelaria as críticas a equipes identificáveis. No repositório os
+#    projetos aparecem apenas como P1..P5; os nomes reais ficam só aqui,
+#    na sua máquina. Os scripts leem este arquivo para saber onde está
+#    cada projeto, mas o arquivo nunca é commitado.
+# =====================================================================
+
+# Pasta que CONTÉM os 5 projetos (cada projeto em uma subpasta).
+# Use o estilo de caminho do Git Bash:
+#   Windows  C:\Users\voce\GitHub\abp   ->   /c/Users/voce/GitHub/abp
+ABP="/c/caminho/para/a/pasta/que/contem/os/projetos"
+
+# Mapeamento "rótulo anônimo : subpasta real" (a subpasta fica dentro de $ABP).
+# Mantenha exatamente P1..P5 nos rótulos — é o que aparece nos CSVs e na análise.
+PROJECTS=(
+  "P1:nome-real-da-pasta-do-projeto-1"
+  "P2:nome-real-da-pasta-do-projeto-2"
+  "P3:nome-real-da-pasta-do-projeto-3"
+  "P4:nome-real-da-pasta-do-projeto-4"
+  "P5:nome-real-da-pasta-do-projeto-5"
+)
+
+# --- (Opcional) sobrescritas dos padrões ------------------------------------
+# As variáveis $HERE (pasta deste script) e $REPO_ROOT (raiz do repositório)
+# já estão definidas quando este arquivo é lido. Descomente para mudar:
+#
+# PROMPTS_DIR="$REPO_ROOT/1-processo/instrumento/prompts"  # de onde vêm os prompts
+# SCHEMAS_DIR="$REPO_ROOT/1-processo/instrumento/schemas"  # de onde vêm os schemas
+# RAW_DIR="$HERE/resultados/raw"                           # onde gravar os JSONs brutos
+# GEMINI_KEY_FILE="$HERE/.gemini_key"                      # chave do Gemini (arquivo de 1 linha)
